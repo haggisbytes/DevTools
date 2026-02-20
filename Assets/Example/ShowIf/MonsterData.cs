@@ -9,6 +9,8 @@ public class MonsterData : ScriptableObject
     public float Attack;
     public float Speed;
     public bool IsBoss;
+    public MonsterType Type;
+
 
     [Header("Special Settings")]
     public bool CanFly;
@@ -37,4 +39,15 @@ public class MonsterData : ScriptableObject
     public float BossDamageMultiplier;
 
 
+    [Header("Troll Settings")]
+    [ShowIf("Type", MonsterType.Troll)]
+    public string TrollWeakness;
+}
+
+
+public enum MonsterType
+{
+    Fairy,
+    Goblin,
+    Troll
 }
